@@ -1,42 +1,53 @@
 <template>
   <div class="container">
-    waiting my work
+    <nav>
+      <h2 class="nav-title">Jumpymariox Github Page</h2>
+    </nav>
+    <div class="content">
+      <h4>
+        Blogs
+      </h4>
+      <ul>
+        <li v-for="blog in blogs" :key="blog.slug">
+          <nuxt-link :to="'blog/' + blog.slug">{{ blog.slug }}</nuxt-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData({ $content }) {
+    const blogs = await $content('blogs').sortBy('createAt', 'asc').fetch()
+    return { blogs }
+  },
+  data() {
+    return {
+      blogs: [],
+    }
+  },
+}
 </script>
 
-<style>
+<style lang="less">
+ul,
+li {
+  list-style: none;
+}
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+nav {
+  background-color: #3b8070;
+  .nav-title {
+    color: white;
+  }
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.content {
+  padding: 24px 48px;
 }
 </style>

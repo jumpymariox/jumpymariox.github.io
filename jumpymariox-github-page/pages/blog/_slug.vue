@@ -1,10 +1,14 @@
 <template>
-  <div class="container">
+  <div class="blog-container">
     <h3>{{ article.slug }}</h3>
+
+    <hr />
 
     <prev-next :prev="prev" :next="next"></prev-next>
 
     <p>更新于: {{ formatDate(article.updatedAt) }}</p>
+
+    <hr />
 
     <p>目录</p>
     <nav>
@@ -22,14 +26,13 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    console.log('asyncData', params)
-    const [prev, next] = await $content('articles')
-      .only(['title', 'slug'])
+    const [prev, next] = await $content('blogs')
+      .only(['slug'])
       .sortBy('createAt', 'asc')
       .surround(params.slug)
       .fetch()
     return {
-      article: await $content('articles', params.slug).fetch(),
+      article: await $content('blogs', params.slug).fetch(),
       prev,
       next,
     }
@@ -46,8 +49,9 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  width: 100vh;
+<style lang="less">
+.blog-container {
+  width: 100vw;
+  padding: 24px 48px;
 }
 </style>
