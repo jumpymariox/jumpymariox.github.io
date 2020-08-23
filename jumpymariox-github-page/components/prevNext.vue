@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="prev-next-container">
     <div v-if="prev" class="prev">
       <nuxt-link v-if="prev" :to="{ params: { slug: prev.slug } }">
         上一篇：{{ prev.slug }}

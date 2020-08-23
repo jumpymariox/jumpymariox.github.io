@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="index-container">
     <nav>
       <h2 class="nav-title">Jumpymariox Github Page</h2>
     </nav>
@@ -9,7 +9,7 @@
       </h4>
       <ul>
         <li v-for="blog in blogs" :key="blog.slug">
-          <nuxt-link :to="'blog/' + blog.slug">{{ blog.slug }}</nuxt-link>
+          <nuxt-link :to="'blog/' + blog.slug + '/'">{{ blog.slug }}</nuxt-link>
         </li>
       </ul>
     </div>
@@ -35,19 +35,19 @@ ul,
 li {
   list-style: none;
 }
-.container {
+.index-container {
   height: 100vh;
   width: 100vw;
   display: grid;
   grid-template-rows: auto 1fr auto;
-}
-nav {
-  background-color: #3b8070;
-  .nav-title {
-    color: white;
+  nav {
+    background-color: #3b8070;
+    .nav-title {
+      color: white;
+    }
   }
-}
-.content {
-  padding: 24px 48px;
+  .content {
+    padding: 24px 48px;
+  }
 }
 </style>
