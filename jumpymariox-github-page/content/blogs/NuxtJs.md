@@ -92,7 +92,7 @@ sequenceDiagram
 需要使用对应的指令和配置，才能对应构建NuxtJs三种渲染模式，需要配置的是`nuxt.config.js`中的`target`和`mode`;
 
 #### 1. 构建单页应用程序 (SPA)
-```
+```js
 // nuxt.config.js
 {
     mode: 'spa'，
@@ -111,7 +111,7 @@ sequenceDiagram
 
 
 #### 2. 构建服务端渲染（SSR）
-```
+```js
 // nuxt.config.js
 {
     mode: 'universal',
@@ -129,7 +129,7 @@ sequenceDiagram
 
 #### 3. 构建服务端静态网页
 
-```
+```js
 // nuxt.config.js
 {
     mode: 'universal',
@@ -214,7 +214,7 @@ hooks触发的时机一般有三种：
 
 ##### 页面首次渲染
 
-```
+```js
 // server
 asyncData
 beforeCreate
@@ -227,7 +227,7 @@ created
 ```
 
 ##### 路由跳转已加载页面
-```
+```js
 // server
 // 无
 

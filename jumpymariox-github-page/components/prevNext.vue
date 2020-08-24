@@ -16,13 +16,15 @@
 
 <script>
 export default {
-  name: 'prev-next',
+  name: 'PrevNext',
   props: {
     prev: {
       type: Object,
+      default: null,
     },
     next: {
       type: Object,
+      default: null,
     },
   },
 }
