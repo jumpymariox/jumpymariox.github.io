@@ -24,7 +24,10 @@
 </template>
 
 <script>
-import mermaid from 'mermaid'
+let mermaid
+if (process.client) {
+  mermaid = require('mermaid')
+}
 
 export default {
   async asyncData({ $content, params }) {
