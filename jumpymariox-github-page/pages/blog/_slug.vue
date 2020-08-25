@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import mermaid from 'mermaid'
+
 export default {
   async asyncData({ $content, params }) {
     const [prev, next] = await $content('blogs')
@@ -41,34 +43,21 @@ export default {
     return { article: null, prev: null, next: null }
   },
   mounted() {
-    const config = {
+    mermaid.initialize({
       startOnLoad: true,
       theme: 'forest',
       flowchart: {
         useMaxWidth: false,
         htmlLabels: true,
       },
-    }
-
-    window.mermaid.initialize(config)
-    window.mermaid.init(
-      undefined,
-      document.querySelectorAll('.language-text>code')
-    )
+    })
+    mermaid.init(undefined, document.querySelectorAll('.language-text>code'))
   },
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('zh', options)
     },
-  },
-  head: {
-    script: [
-      {
-        src:
-          'https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js',
-      },
-    ],
   },
 }
 </script>

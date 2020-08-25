@@ -151,7 +151,7 @@ sequenceDiagram
 ### 一. NuxtJs Lifecycle
 
 这是官网的生命周期示意图
-![image](https://zh.nuxtjs.org/guides/nuxt-lifecycle.png)
+!image(https://zh.nuxtjs.org/guides/nuxt-lifecycle.png)
 
 在NuxtJs的生命周期中，NuxtJs Lifecycle特有的hooks有：
 

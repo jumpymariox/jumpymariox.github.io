@@ -6,7 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate && cp -rf dist/ ../docs/",
+    "generate": "nuxt build && nuxt generate && cp -rf dist/ ../docs/",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
@@ -27,7 +27,9 @@
     "@nuxtjs/axios": "^5.12.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "ant-design-vue": "^1.6.4",
-    "nuxt": "^2.14.0"
+    "lodash": "^4.17.20",
+    "mermaid": "^8.7.0",
+    "nuxt": "^2.14.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
