@@ -62,6 +62,14 @@ export default {
       return new Date(date).toLocaleDateString('zh', options)
     },
   },
+  head: {
+    script: [
+      {
+        src:
+          'https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.7.0/mermaid.min.js',
+      },
+    ],
+  },
 }
 </script>
 

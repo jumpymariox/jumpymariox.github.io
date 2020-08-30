@@ -11,7 +11,8 @@
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
     "test": "jest",
-    "serve": "nuxt serve"
+    "serve": "nuxt serve",
+    "analyze": "nuxt build --analyze"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -27,7 +28,6 @@
     "@nuxtjs/axios": "^5.12.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "ant-design-vue": "^1.6.4",
-    "lodash": "^4.17.20",
     "mermaid": "^8.7.0",
     "nuxt": "^2.14.3"
   },
@@ -52,6 +52,7 @@
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.4",
+    "webpack-cdn-plugin": "^3.3.1"
   }
 }

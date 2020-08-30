@@ -53,8 +53,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
@@ -72,5 +70,10 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    analyze: true,
+    extend: (config) => {
+      config.externals = { ...config.externals, mermaid: 'mermaid' }
+    },
+  },
 }
