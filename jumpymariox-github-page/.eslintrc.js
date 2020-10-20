@@ -19,4 +19,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
   },
+  globals: {
+    _: true,
+  },
 }

@@ -1,17 +1,20 @@
 <template>
   <div class="index-container">
     <nav>
-      <h2 class="nav-title">Jumpymariox Github Page</h2>
+      <img src="~assets/leave.svg" />
+      <span class="nav-title">jumpymariox</span>
     </nav>
     <div class="content">
-      <h4>
-        Blogs
-      </h4>
-      <ul>
-        <li v-for="blog in blogs" :key="blog.slug">
-          <nuxt-link :to="'blog/' + blog.slug + '/'">{{ blog.slug }}</nuxt-link>
-        </li>
-      </ul>
+      <aside></aside>
+      <div class="inner-content">
+        <ul>
+          <li v-for="blog in blogs" :key="blog.slug">
+            <nuxt-link :to="'blog/' + blog.slug + '/'">{{
+              blog.slug
+            }}</nuxt-link>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -41,13 +44,46 @@ li {
   display: grid;
   grid-template-rows: auto 1fr auto;
   nav {
-    background-color: #3b8070;
+    display: flex;
+    padding-left: 45px;
+    height: 40px;
+    background-color: #598987;
+    > img {
+      position: absolute;
+      top: 2px;
+      left: 10px;
+      width: 35px;
+    }
     .nav-title {
+      margin-left: 5px;
+      font-family: cursive;
+      line-height: 36px;
       color: white;
     }
   }
   .content {
-    padding: 24px 48px;
+    display: flex;
+    background-color: #f2dfc5;
+
+    aside {
+      width: 150px;
+      background-color: #ffaa8d;
+    }
+    .inner-content {
+      flex: 1;
+      li {
+        line-height: 1.5;
+      }
+      a {
+        text-decoration: none;
+        color: #565656;
+        transition: 0.3s;
+
+        &:hover {
+          color: #b87d38;
+        }
+      }
+    }
   }
 }
 </style>
